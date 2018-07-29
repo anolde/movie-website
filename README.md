@@ -8,8 +8,10 @@ A website containing all of my favorite movies and television shows. Possibly th
 * entertainment_center.py - this file contains the instances of my favorite movies and television shows. To contribute your favorite movies or television shows, please add new Movie or TvShow objects to this file
 ## Examples ##
 ### Create a New Movie ### 
-```new_movie = media.Movie("title of movie", "movie plot", "cover art URL", "youtube.com trailer URL")
+```
+new_movie = media.Movie("title of movie", "movie plot", "cover art URL", "youtube.com trailer URL")
 ```
 ### Create a New TV Show ###
-```new_tvshow = media.TvShow("title of TV show", "tv show plot", "cover art URL", "youtube.com trailer URL")
+```
+new_tvshow = media.TvShow("title of TV show", "tv show plot", "cover art URL", "youtube.com trailer URL")
 ```
