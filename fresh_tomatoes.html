@@ -1,10 +1,4 @@
-import webbrowser
-import os
-import re
 
-
-# Styles and scripting for the page
-main_page_head = '''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,11 +78,7 @@ main_page_head = '''
         });
     </script>
 </head>
-'''
 
-
-# The main page layout and title bar
-main_page_content = '''
   <body>
     <!-- Trailer Video Modal -->
     <div class="modal" id="trailer">
@@ -114,61 +104,61 @@ main_page_content = '''
       </div>
     </div>
     <div class="container">
-      {movie_tiles}
-    </div>
-  </body>
-</html>
-'''
-
-
-# A single movie entry html template
-movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="T8sAXDUFSCs" data-toggle="modal" data-target="#trailer">
+    <img src="https://1cqgxm3l59yi2wwbnn3qy35h-wpengine.netdna-ssl.com/wp-content/uploads/2008/12/dvd-cover3.jpg" width="220" height="342">
+    <h2>Stepmom</h2>
     <br>
-    <h3><em>{movie_plot}</em></h3>
+    <h3><em>A story of a mother who is replaced by a new wife.</em></h3>
     <br><br>
 
 </div>
-'''
 
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="aeVkbNka9HM" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/516pTmL6guL.jpg" width="220" height="342">
+    <h2>White Chicks</h2>
+    <br>
+    <h3><em>Two FBI agents must disguise themselves completely.</em></h3>
+    <br><br>
 
-def create_movie_tiles_content(movies):
-    # The HTML content for this section of the page
-    content = ''
-    for movie in movies:
-        # Extract the youtube ID from the url
-        youtube_id_match = re.search(
-            r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
-        youtube_id_match = youtube_id_match or re.search(
-            r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
-        trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
-                              else None)
+</div>
 
-        # Append the tile for the movie with its content filled in
-        content += movie_tile_content.format(
-            movie_title=movie.title,
-            movie_plot = movie.storyline,
-            #rating = movie.rating,
-            poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
-        )
-    return content
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WT_xpFZe20A" data-toggle="modal" data-target="#trailer">
+    <img src="https://www.landmarktheatres.com/image?url=http://landmark.filmdb.peachcinemas.com/FilmImages/21/1/2634/Labyrinth_224x332.png" width="220" height="342">
+    <h2>Labyrinth</h2>
+    <br>
+    <h3><em>A young girl negotiates with a goblin king</em></h3>
+    <br><br>
 
+</div>
 
-def open_movies_page(movies):
-    # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WS8Jbm8Gob4" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/51acekLm3uL._SY445_.jpg" width="220" height="342">
+    <h2>Harry Potter</h2>
+    <br>
+    <h3><em>Fifth year wizard Harry Potter faces character defamation when he claims that He Who Must Not Be Named has returned.</em></h3>
+    <br><br>
 
-    # Replace the movie tiles placeholder generated content
-    rendered_content = main_page_content.format(
-        movie_tiles=create_movie_tiles_content(movies))
+</div>
 
-    # Output the file
-    output_file.write(main_page_head + rendered_content)
-    output_file.close()
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="-1v_q6TWAL4" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/51DJ570H6VL._SX342_.jpg" width="220" height="342">
+    <h2>Buffy</h2>
+    <br>
+    <h3><em>One girl is chosen to defend the world against vampires, and the forces of darkness.</em></h3>
+    <br><br>
 
-    # open the output file in the browser (in a new tab, if possible)
-    url = os.path.abspath(output_file.name)
-    webbrowser.open('file://' + url, new=2)
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="icXooBKhelc" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Grey%27s_Anatomy_season_12_dvd.jpg/240px-Grey%27s_Anatomy_season_12_dvd.jpg" width="220" height="342">
+    <h2>Greys Anatomy</h2>
+    <br>
+    <h3><em>A doctor has to juggle her professional goals with her romantic interests as a budding surgeon.</em></h3>
+    <br><br>
+
+</div>
+
+    </div>
+  </body>
+</html>
