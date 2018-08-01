@@ -27,14 +27,14 @@ print(labyrinth.storyline)
 
 harry_potter = media.Movie("Harry Potter",
                            "Fifth year wizard Harry Potter faces character defamation when he claims that He Who Must Not Be Named has                 returned.",  # noqa
-                           "https: // images-na.ssl-images-amazon.com/images/I/51acekLm3uL._SY445_.jpg",  # noqa
+                           "https://images-na.ssl-images-amazon.com/images/I/51acekLm3uL._SY445_.jpg",  # noqa
                            "2007",
                            "https://www.youtube.com/watch?v=WS8Jbm8Gob4",
                            "6.9/10")
 
 greys_anatomy = media.TvShow("Greys Anatomy",
                              "A doctor has to juggle her professional goals with her romantic interests as a budding surgeon.",  # noqa
-                             "https: // upload.wikimedia.org/wikipedia/en/thumb/3/3e/Grey % 27s_Anatomy_season_12_dvd.jpg/240px-Grey % 27s_Anatomy_season_12_dvd.jpg",  # noqa
+                             "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Grey%27s_Anatomy_season_12_dvd.jpg/240px-Grey%27s_Anatomy_season_12_dvd.jpg",  # noqa
                              "2005",
                              "14",
                              "ABC",
